@@ -1,6 +1,8 @@
-# Project Name
+# Multiverse and Genetic algorithms for Feature Selection to Predict Fault-Prone Software Modules
 
-[Project Description]
+ Software product defects are a common event. In software development, it is preferable to identify fault-prone modules early on to guarantee a high-quality final product. It focuses attention on the modules that are expensive to develop and prone to errors. Two common aspects of data quality that can affect classification performance are class
+imbalance and noisy attributes of data set feature selection (FS) and imbalance. feature selection is the process of determining the most optimal subset of features from a dataset based on an intended outcome. imbalance refers to datasets that have far fewer instances of the class of interest (minority) when compared to the other class (majority). In the current work, we propose a combination of genetic algorithm (GA) and Multi-Verse Optimization (MVO) to deal with feature selection, and the oversampling technique is employed to deal with the class imbalance problem for improving the performance of software defect prediction. SVM and Random Forest (RF) classifiers were used on selected software defect datasets 
+
 
 ## Table of Contents
 - [Project Overview](#project-overview)
