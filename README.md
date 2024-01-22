@@ -1,13 +1,6 @@
 # Multiverse optimizer and Genetic algorithms for Feature Selection with SMOTE to Predict Fault-Prone Software Modules
 
 
-# Color LS
-
-[![forthebadge](http://forthebadge.com/images/badges/made-with-colab.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
-
-
-
 # Table of contents
 
 - [Introduction](#introduction)
