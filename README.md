@@ -1,9 +1,22 @@
 # Multiverse optimizer and Genetic algorithms for Feature Selection with SMOTE to Predict Fault-Prone Software Modules
 
 
- Software product defects are a common event. In software development, it is preferable to identify fault-prone modules early on to guarantee a high-quality final product. It focuses attention on the modules that are expensive to develop and prone to errors. Two common aspects of data quality that can affect classification performance are class
-imbalance and noisy attributes of data set feature selection (FS) and imbalance. feature selection is the process of determining the most optimal subset of features from a dataset based on an intended outcome. imbalance refers to datasets that have far fewer instances of the class of interest (minority) when compared to the other class (majority). In the current work, we propose a combination of genetic algorithm (GA) and Multi-Verse Optimization (MVO) to deal with feature selection, and the oversampling technique is employed to deal with the class imbalance problem for improving the performance of software defect prediction. SVM and Random Forest (RF) classifiers were used on selected software defect datasets 
+# Color LS
 
+[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+
+[![Gem Version](https://badge.fury.io/rb/colorls.svg)](https://badge.fury.io/rb/colorls)
+[![CI](https://github.com/athityakumar/colorls/actions/workflows/ruby.yml/badge.svg)](https://github.com/athityakumar/colorls/actions/workflows/ruby.yml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
+
+A Ruby script that colorizes the `ls` output with color and icons. Here are the screenshots of working example on an iTerm2 terminal (Mac OS), `oh-my-zsh` with `powerlevel9k` theme and `powerline nerd-font + awesome-config` font with the `Solarized Dark` color theme.
+
+ ![image](https://user-images.githubusercontent.com/17109060/32149040-04f3125c-bd25-11e7-8003-66fd29bc18d4.png)
+
+*If you're interested in knowing the powerlevel9k configuration to get this prompt, have a look at [this gist](https://gist.github.com/athityakumar/1bd5e9e24cd2a1891565573a893993eb).*
+
+# Table of contents
 
 - [Introduction](#introduction)
 - [Data](#data)
