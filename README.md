@@ -179,11 +179,8 @@ e. clear the arrays to use them on the rest of the datasets.
     2. Datas that are balanced and feature selected by (GA).
     3. Datas that are balanced and feature-selected by (MVO).
 make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
-#### 6.  Train (RF) machine learning models:
-    1. Datas that are balanced only WITHOUT feature selection methods.
-    2. Datas that are balanced and feature selected by (GA).
-    3. Datas that are balanced and feature-selected by (MVO).
-make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
+#### 6. Train (RF) machine learning models:
+1) a dataset that is balanced only, without feature selection. 2) a dataset that is balanced, with feature selection by (GA). 3) a dataset that is balanced, with feature selection by (GA): make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
 #### 7. Evaluate each model's performance.
 use `metrics.accuracy_score` for accuracy, `metrics.roc_auc_score` for AUC, `metrics.precision_score` for precision, `metrics.recall_score` for recall, and `metrics.f1_score` F1 score metrics. for each model 
 
