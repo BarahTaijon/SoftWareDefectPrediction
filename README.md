@@ -32,15 +32,18 @@ The project uses the following datasets, each accessible through its respective 
 Ensure you have the following Python libraries installed before running the project:
 - pandas
 - matplotlib
-- numpy
+- NumPy
 - scikit-learn
 - imbalanced-learn
-- genetic-selection
+
 - SMOTE (from imblearn.over_sampling)
 - time
 - svm
 - RandomForestClassifier
 - GridSearchCV
+- metrics
+- genetic-selection (from sklearn-genetic)
+
 
 ## install 
 `pip install sklearn-genetic`
