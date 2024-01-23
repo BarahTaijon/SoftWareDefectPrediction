@@ -7,13 +7,13 @@
 - [Data](#data)
 - [Prerequisites](#prerequisites)
 - [Install](#install)
-- [RunningSteps](#runningsteps)
+- [Running_Steps](#runningsteps)
 
 
 
 ## Introduction
 
-The primary goal of this project is to predict software defects using machine learning. The project explores different machine learning models, evaluates their performance metrics, employs a Multiverse Optimizer and genetic algorithm for feature selection, and a Synthetic Minority Over-Sampling technique (SMOTE) for balancing the classes of the dataset.
+The primary goal of this project is to predict software defects using machine learning. The project explores different machine learning models and evaluates their performance metrics, Balances the classes of the dataset using the Synthetic Minority Over-Sampling technique (SMOTE), and employs a Multiverse Optimizer and genetic algorithm for feature selection.
 
 
  
@@ -46,6 +46,7 @@ Ensure you have the following Python libraries installed before running the proj
 
 
 ## install 
+Install the required dependency:
 `pip install sklearn-genetic`
 
 ## RunningSteps
@@ -61,14 +62,14 @@ git clone https://github.com/BarahTaijon/SoftWareDefectPrediction/blob/main/ver3
 #### 3. Datasets:
    - Load datasets from the provided URLs.
    - Dropping empty rows in the jm1 dataset.
-   - Split the datasets into features and labels. then split them into training & testing features and training & testing labels.
+   - Split the datasets into features and labels. Then split them into training & testing features and training & testing labels.
 
 #### 4. Preprocess the data:
    1. **Balance the datasets:** using the Synthetic Minority Over-sampling Technique (SMOTE). **Note:** Only the training labels and features are balanced.
-```
+`
 X, y = SMOTE().fit_resample(kc1_x_train, kc1_y_train)
 
-```
+`
    2. **Select Features:** by applying:
        - **The Genetic algorithm.**
      
@@ -188,11 +189,12 @@ make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
 calculate the performance of models by using  `metrics.accuracy_score` for accuracy, `metrics.roc_auc_score` for AUC, `metrics.precision_score` for precision, `metrics.recall_score` for recall, and `metrics.f1_score` F1 score metrics for each model.
 
 #### 8. Compare the effect of the feature selection methods.
-    + Make model comparisons based on the datasets, with different criteria used e.g. accuracy, AUC, precision, etc.
-Here, for each (dataset in a model) create 5 arrays which are the measures.  after testing each model append the value of measure into the array `array.append()`. then make a histogram to show the performance with and without FS methods.
+ - Make comparisons models based on datasets with different criteria, used e.g. accuracy, AUC, precision, etc.
+Here, for (each dataset in a model) create 5 arrays which are the measures.  after testing each model append the value of measure into the array `array.append()`. then make a histogram to show the performance with and without FS methods.
+for example `jm1` data set has  `jm1_accuracy_svm` array, and `jm1_accuracy_rf`, `jm1_precision_svm`, and  `jm1_precision_rf` each array hold the performance of the classifier only balanced , with GA, and with MVO. 
 
-    + Make model comparisons based on the datasets, with time criteria.
-Finally here, for each (dataset in a model) create an arrays which are the time in seconds.  hold the current time use `start_time = time.time() ` before fitting and testing the model. calculate the time in seconds that the model takes to be fitted and tested by subtracting the current time from the starting time  `time.time() - start_time` . append the value into the time array of that dataset & model `array.append()`. Then make a plot to show the time performance with and without FS methods.
+ - Make comparison models  based on the datasets, with time criteria.
+Finally here, for each (dataset in a model) create an arrays which are the time in seconds.  hold the current time use `start_time = time.time() ` before fitting and testing the model. calculate the time in seconds that the model takes to be fitted and tested by subtracting the current time from the starting time  `time.time() - start_time` . append the value into the time array of that dataset & model `array. append()`. Then make a plot to show the time performance with and without FS methods.
 
 
 
