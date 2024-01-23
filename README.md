@@ -79,7 +79,7 @@ model = GeneticSelectionCV( RandomForestClassifier(max_depth=6, n_estimators=30)
                            mutation_proba=0.2, n_generations=50, crossover_independent_proba=0.5, mutation_independent_proba=0.04,
                              tournament_size=3, n_gen_no_change=10, caching=True, n_jobs=-1)
 ```
-here for each dataset create a model with ```RandomForestClassifier``` as a classifier to evaluate the fitness function.  ```cv``` is for cross-validation, ```verbose``` handle the output of each model,  ```scoring``` what is the score to measure each gene,  ```max_features``` for the max number of features selected (here = the # of features in the dataset), ```n_population``` the number of genes/ possible solution, ``` crossover_proba``` Probability of crossover, ```mutation_proba ``` Probability of mutation, ```  n_generations``` number of iteration, ```crossover_independent_proba```  Independent probability for each attribute to be exchanged, ```mutation_independent_proba``` Independent probability for each attribute to be mutated, ```n_gen_no_change``` terminate optimization when best individual is not changing in all of the previous n_gen_no_change number of generations.
+Create for each dataset a model with ```RandomForestClassifier``` as a classifier to evaluate the fitness function.  ```cv``` is for cross-validation, ```verbose``` handle the output of each model,  ```scoring``` what is the score to measure each gene,  ```max_features``` for the max number of features selected (here = the # of features in the dataset), ```n_population``` the number of genes/ possible solution, ``` crossover_proba``` Probability of crossover, ```mutation_proba ``` Probability of mutation, ```  n_generations``` number of iteration, ```crossover_independent_proba```  Independent probability for each attribute to be exchanged, ```mutation_independent_proba``` Independent probability for each attribute to be mutated, ```n_gen_no_change``` terminate optimization when best individual is not changing in all of the previous n_gen_no_change number of generations.
 
 
 
@@ -95,17 +95,17 @@ jm1_ga_x_test = jm1_x_test[jm1_x_test.columns[model.support_]]
 
   - **The Multiverse optimizer algorithm.**
 
-      Here are some global parameters:
+      First, initialize some global parameters:
 ```trainX ``` and ```trainY``` two arrays to hold train x and y of the dataset that currently worked.
 ``` ModifiedTrainX``` and ```ModifiedTestX``` arrays holds selected features after applying the MVO.
 ```population``` array of the number of universes.
 ```Universes``` array that stores each Universe with corresponding calculated fitness value.
 ```SortedUniverses```
-```WEP_Max``` and ```WEP_Min``` the search boundary space.
+```WEP_Max``` and ```WEP_Min```are the max and min of WEP which refer to the search space.
 `BestUniverse` represents the best-selected features.
-`BestCost` represents the maximum cost or best fitness value. The running steps of this algorithm are explained as follows:
+`BestCost` represents the maximum cost or best fitness value. The running steps of this algorithm are as follows:
 
-       Start by assigning For each dataset: balanced train_x to ```trainX``` and balanced train y to `trainY`. Then call the multiverse algorithm function to select features. after that apply selected features to ```mvo_x_train``` & ```mvo_x_test```. the code is below:
+       Start by assigning For each dataset: balanced train_x to ```trainX``` and balanced train y to `trainY`. Then call the multiverse algorithm function to select features. after that apply selected features of that dataset to ```mvo_x_train``` & ```mvo_x_test```. the code is below:
 
 ```
 trainX = X_jm1
@@ -117,7 +117,7 @@ jm1_mvo_x_test =  ModifiedTestX
 
 The calling function running steps is explained below:
 
-a. ``` initPop()``` initial the population with (universies). each universe has random variables between 0 and 1. The size of the universe = MAX_FEATURE which is equal to the max_size of features in each dataset.
+a. ``` initPop()``` initial the population with (universies). each universe has random variables between 0 and 1. The size of the universe = `MAX_FEATURE` which is equal to the max_size of features in each dataset.
 
 ```
 def initPop():
@@ -178,12 +178,15 @@ d. take the selected features and apply them on `ModifiedTrainX` & `ModifiedTest
 e. clear the arrays to use them on the rest of the datasets.
 
  #### 5. Train (SVM) machine learning models:
-    1. Datas that are balanced only WITHOUT feature selection methods.
-    2. Datas that are balanced and feature selected by (GA).
-    3. Datas that are balanced and feature-selected by (MVO).
-make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
+1) balanced dataset only, without feature selection.
+2) balanced dataset, with feature selection by (GA).
+3) balanced dataset, with feature selection by (MVO).
+make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`.
 #### 6. Train (RF) machine learning models:
-1) a dataset that is balanced only, without feature selection. 2) a dataset that is balanced, with feature selection by (GA). 3) a dataset that is balanced, with feature selection by (GA): make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
+1) balanced dataset only, without feature selection.
+2) balanced dataset, with feature selection by (GA).
+3) balanced dataset, with feature selection by (MVO).
+make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`.
 #### 7. Evaluate each model's performance.
 calculate the performance of models by using  `metrics.accuracy_score` for accuracy, `metrics.roc_auc_score` for AUC, `metrics.precision_score` for precision, `metrics.recall_score` for recall, and `metrics.f1_score` F1 score metrics for each model.
 
