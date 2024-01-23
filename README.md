@@ -66,10 +66,9 @@ git clone https://github.com/BarahTaijon/SoftWareDefectPrediction/blob/main/ver3
 
 #### 4. Preprocess the data:
    1. **Balance the datasets:** using the Synthetic Minority Over-sampling Technique (SMOTE). **Note:** Only the training labels and features are balanced.
-`
+```
 X, y = SMOTE().fit_resample(kc1_x_train, kc1_y_train)
-
-`
+```
    2. **Select Features:** by applying:
        - **The Genetic algorithm.**
      
