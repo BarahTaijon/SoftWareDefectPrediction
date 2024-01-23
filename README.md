@@ -185,14 +185,14 @@ make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
 #### 6. Train (RF) machine learning models:
 1) a dataset that is balanced only, without feature selection. 2) a dataset that is balanced, with feature selection by (GA). 3) a dataset that is balanced, with feature selection by (GA): make a model, fit it, and test it using `x_test`, `ga_x_test`, and `mvo_x_test`
 #### 7. Evaluate each model's performance.
-use `metrics.accuracy_score` for accuracy, `metrics.roc_auc_score` for AUC, `metrics.precision_score` for precision, `metrics.recall_score` for recall, and `metrics.f1_score` F1 score metrics. for each model 
+calculate the performance of models by using  `metrics.accuracy_score` for accuracy, `metrics.roc_auc_score` for AUC, `metrics.precision_score` for precision, `metrics.recall_score` for recall, and `metrics.f1_score` F1 score metrics for each model.
 
-#### 8. To compare the effect of the feature selection methods.
-    + Models comparisons based on the datasets are made, with different criteria used e.g. accuracy, AUC, precision, etc.
+#### 8. Compare the effect of the feature selection methods.
+    + Make model comparisons based on the datasets, with different criteria used e.g. accuracy, AUC, precision, etc.
 Here, for each (dataset in a model) create 5 arrays which are the measures.  after testing each model append the value of measure into the array `array.append()`. then make a histogram to show the performance with and without FS methods.
 
-    + Models comparisons based on the datasets are made, with time criteria.
-Finally here, for each (dataset in a model) create an arrays which are the time in seconds.  hold the current time use `start_time = time.time() ` before fitting and testing the model. append the value of `time.time() - start_time` into the array `array.append()`. then make a plot to show the time performance with and without FS methods.
+    + Make model comparisons based on the datasets, with time criteria.
+Finally here, for each (dataset in a model) create an arrays which are the time in seconds.  hold the current time use `start_time = time.time() ` before fitting and testing the model. calculate the time in seconds that the model takes to be fitted and tested by subtracting the current time from the starting time  `time.time() - start_time` . append the value into the time array of that dataset & model `array.append()`. Then make a plot to show the time performance with and without FS methods.
 
 
 
